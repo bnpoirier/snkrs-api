@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+
+  db:
+    image: mysql:latest
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: s3cr3t
+      MYSQL_DATABASE: snkrs
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: s3cr3t
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    restart: always
+    environment:
+      PMA_HOST: db
+    ports:
+      - 8888:80
+
