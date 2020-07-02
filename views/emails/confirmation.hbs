@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email confirmation</title>
+    <style>
+        .footer{
+            text-align: center;
+        }
+
+        .footer-logo{
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <p>Bonjour {{firstName}},</p>
@@ -13,8 +22,12 @@
         <b>{{address}}, {{zipCode}} {{city}}</b>
     </p>
     <p>Nous restons disponible pour toute question ou complément d'information.</p>
-    <p>Cordialement,</p>
-    <p><b>L'équpe SnkrsTrust - <br/>
-    Matthieu Chemin</b></p>
+    <p>
+        Cordialement,<br/>
+        <b>L'équipe Snkr Trust</b>
+    </p>
+    <div className="footer">
+        <img className="footer-logo" src="{{domain}}/images/logo.svg"/>
+    </div>    
 </body>
 </html>

@@ -15,8 +15,12 @@ class Email{
      * @param {Object} data 
      */
     constructor(){
-        this.from = '"Brendan Poirier 👻" <noreply@brendanpoirier.fr>';
-        this.subject = "Snkrs Trust";
+        this.from = '"L\'équipe Snkr Trust" <hello@snkrstrust.fr>';
+        this.subject = "Snkr Trust";
+        
+        this.defaultData = {
+            domain: config.DOMAIN
+        };
     }
 
     /**
@@ -28,16 +32,19 @@ class Email{
 
     /**
      * Render template from handlebars file
-     * @param {*} path 
-     * @param {*} context 
+     * @param {string} path 
+     * @param {Object} contextData
      */
-    async renderTemplate(template, context){
+    async renderTemplate(template, contextData){
+        // Merge default data with 
+        const data = { ...this.defaultData, ...contextData};
+
         return new Promise((resolve, reject) => {
             fs.readFile(`${__dirname}/../views/emails/${template}.hbs`, 'utf-8', (error, html) => {
                 if(error) reject(error);
                 
                 try{
-                    resolve(handlebars.compile(html)(context));
+                    resolve(handlebars.compile(html)(data));
                 }
                 catch(error){
                     reject(error)

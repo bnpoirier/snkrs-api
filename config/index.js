@@ -5,7 +5,9 @@ dotenv.config();
 
 // Global app configuration
 const config = {
+    HOST: process.env.HOST || 'localhost',
     PORT: process.env.PORT || 8000,
+    DOMAIN: process.env.DOMAIN,
 
     MYSQL_HOST: process.env.MYSQL_HOST || 'localhost',
     MYSQL_PORT: process.env.MYSQL_PORT || 3306,
