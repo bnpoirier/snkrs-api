@@ -1,0 +1,12 @@
+# dotenv files
+.env
+.env.production
+
+# IDE folders
+.idea/
+.intellij
+.git/
+
+# NPM files
+node_modules/
+.package-lock.json
