@@ -18,7 +18,7 @@
     "jade": "~1.11.0",
     "moment": "^2.27.0",
     "morgan": "~1.9.1",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "sequelize": "^5.21.13"
   },
   "devDependencies": {
